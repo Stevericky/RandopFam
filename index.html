@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamanya di Hati - Mengenang [Nama Mendiang]</title>
+    <title>Selamanya di Hati - Mengenang Sie Hai</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -15,8 +15,12 @@
         html {
             scroll-behavior: smooth; 
         }
-        .video-selection {
-            margin-top: 10px;
+        .content-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -37,26 +41,20 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Selamanya di Hati</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="#tentang" class="nav-link">Tentang Mendiang</a></li>
-                    <li class="nav-item"><a href="#galeri" class="nav-link">Galeri Foto</a></li>
-                    <li class="nav-item"><a href="#video" class="nav-link">Video Kenangan</a></li>
-                    <li class="nav-item"><a href="#klip" class="nav-link">Klip Video</a></li>
-                    <li class="nav-item"><a href="#pesan" class="nav-link">Pesan dan Kenangan</a></li>
-                </ul>
-            </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="#tentang" class="nav-link">Tentang Mendiang</a></li>
+                <li class="nav-item"><a href="#galeri" class="nav-link">Galeri Foto</a></li>
+                <li class="nav-item"><a href="#video" class="nav-link">Video Kenangan</a></li>
+                <li class="nav-item"><a href="#klip" class="nav-link">Klip Video</a></li>
+                <li class="nav-item"><a href="#pesan" class="nav-link">Pesan dan Kenangan</a></li>
+            </ul>
         </div>
     </nav>
 
     <main class="container mt-5">
         <section id="tentang" class="content-section">
             <h2>Tentang Mendiang</h2>
-            <p>Sesosok ayah yang baik hati dan menyayangi anak-anaknya, juga sangat pekerja keras.</p>
+            <p>Sesosok ayah yang baik hati dan menyanyangi anak-anaknya juga sangat pekerja keras.</p>
             <img src="Foto1.jpg" alt="[Sie Hai]" class="foto-mendiang img-fluid rounded shadow">
         </section>
 
@@ -77,7 +75,7 @@
                         <img src="Foto4.jpg" class="d-block w-100" alt="Kenangan 4">
                     </div>
                     <div class="carousel-item">
-                        <img src="Foto5.jpg" class="d-block w-100" alt="Kenangan 5">
+                        <img src="Foto5.jpg" class ="d-block w-100" alt="Kenangan 5">
                     </div>
                     <div class="carousel-item">
                         <img src="Foto6.jpg" class="d-block w-100" alt="Kenangan 6">
@@ -91,6 +89,14 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Selanjutnya</span>
                 </a>
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselGaleri" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselGaleri" data-slide-to="1"></li>
+                    <li data-target="#carouselGaleri" data-slide-to="2"></li>
+                    <li data-target="#carouselGaleri" data-slide-to="3"></li>
+                    <li data-target="#carouselGaleri" data-slide-to="4"></li>
+                    <li data-target="#carouselGaleri" data-slide-to="5"></li>
+                </ol>
             </div>
         </section>
 
@@ -104,8 +110,11 @@
 
         <section id="klip" class="content-section">
             <h2>Klip Video</h2>
-            <video id="klip-video" controls class="w-100 rounded shadow">
+            <video id="klip-video" autoplay muted controls class="w-100 rounded shadow">
                 <source src="klip1.mp4" type="video/mp4">
+                <source src="klip2.mp4" type="video/mp4">
+                <source src="Goyangan.mp4" type="video/mp4">
+                <source src="klip4.mp4" type="video/mp4">
                 Browser Anda tidak mendukung video.
             </video>
         </section>
@@ -140,8 +149,8 @@
             "klip4.mp4"
         ];
 
-        const videoElement = document.getElementById('klip-video');
         let currentVideoIndex = 0;
+        const videoElement = document.getElementById('klip-video');
 
         function changeVideo() {
             currentVideoIndex = (currentVideoIndex + 1) % klipVideos.length;
@@ -151,10 +160,6 @@
         }
 
         videoElement.addEventListener('ended', changeVideo);
-        // Mulai dengan video pertama
-        videoElement.src = klipVideos[currentVideoIndex];
-        videoElement.load();
-        videoElement.play();
     </script>
 </body>
 </html>
