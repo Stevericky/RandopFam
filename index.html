@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamanya di Hati - Mengenang [Nama Mendiang]</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="parallax">
+        <!-- Video Background -->
+        <video autoplay muted loop id="background-video">
+            <source src="Goyangan.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video HTML5.
+        </video>
+
+        <!-- Overlay untuk teks -->
+        <div class="overlay">
+            <div class="container text-center">
+                <h1>Selamanya di Hati</h1>
+                <p>Mengenang Sie Hai</p>
+                <a href="#tentang" class="scroll-down">Lanjutkan Membaca</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="#tentang" class="nav-link">Tentang Mendiang</a></li>
+                <li class="nav-item"><a href="#galeri" class="nav-link">Galeri Foto</a></li>
+                <li class="nav-item"><a href="#video" class="nav-link">Video Kenangan</a></li>
+                <li class="nav-item"><a href="#klip" class="nav-link">Klip Video</a></li>
+                <li class="nav-item"><a href="#pesan" class="nav-link">Pesan dan Kenangan</a></li>
+                <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <section id="tentang" class="content-section">
+            <h2>Tentang Mendiang</h2>
+            <p>Sesosok ayah yang baik hati dan menyanyangi anak anaknya juga sangat amat pekerja keras.</p>
+            <img src="Foto1.jpg" alt="[Sie Hai]" class="foto-mendiang img-fluid rounded shadow">
+        </section>
+
+        <section id="galeri" class="content-section">
+            <h2>Galeri Foto</h2>
+            <div id="carouselGaleri" class="carousel slide mb-4" data-ride="carousel" data-interval="2000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Foto1.jpg" class="d-block w-100" alt="Kenangan 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Foto2.jpg" class="d-block w-100" alt="Kenangan 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Foto3.jpg" class="d-block w-100" alt="Kenangan 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Foto4.jpg" class="d-block w-100" alt="Kenangan 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Foto5.jpg" class="d-block w-100" alt="Kenangan 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Foto6.jpg" class="d-block w-100" alt="Kenangan 6">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselGaleri" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Sebelumnya</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselGaleri" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Selanjutnya</span>
+                </a>
+            </div>
+        </section>        
+
+        <section id="video" class="content-section">
+            <h2>Video Kenangan</h2>
+            <video autoplay muted loop controls class="w-100 rounded shadow">
+                <source src="Klip2.mp4" type="video/mp4">
+                Browser Anda tidak mendukung video.
+            </video>
+        </section>
+
+        <section id="klip" class="content-section">
+            <h2>Klip Video</h2>
+            <video id="klip-video" autoplay muted controls class="w-100 rounded shadow">
+                <source src="klip1.mp4" type="video/mp4">
+                Browser Anda tidak mendukung video.
+            </video>
+        </section>
+
+        <section id="pesan" class="content-section">
+            <h2>Pesan dan Kenangan</h2>
+            <p>
+                Pesan:
+                
+                Kepada Ayah tercinta, terima kasih atas semua cinta dan dukungan yang telah Ayah berikan. Setiap momen yang kita habiskan bersama adalah kenangan berharga yang akan saya bawa selamanya. Walau kini saya harus melanjutkan hidup tanpa Ayah, pelajaran dan nilai-nilai yang Ayah tanamkan akan selalu menjadi panduan dalam langkahku.
+                
+                Kenangan:
+                
+                Perjalanan kita ke pantai, tawa dan kebahagiaan yang tak terlupakan.
+                Momen-momen sederhana saat kita duduk dan berbagi cerita di sore hari.
+                Nasihat Ayah yang selalu membimbingku dalam hidup.
+                Cinta Ayah yang tulus dan tanpa syarat, menjadi kekuatan terbesar dalam hidupku.</p>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <h2>Kontak</h2>
+            <p>Email: Randolph@gmail.com</p>
+            <p>&copy; 2024 Selamanya di Hati. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Slideshow script -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+    <!-- Kirim pesan script -->
+    <script>
+        document.getElementById('pesanForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah form submit
+            alert('Pesan Anda telah dikirim.'); // Menampilkan pesan konfirmasi
+        });
+    </script>
+
+    <!-- Kode JavaScript untuk klip video -->
+    <script>
+        const klipVideos = [
+            "klip1.mp4",
+            "klip2.mp4",
+            "klip3.mp4" // Tambahkan lebih banyak klip sesuai kebutuhan
+        ];
+
+        let currentVideoIndex = 0;
+        const videoElement = document.getElementById('klip-video');
+
+        // Fungsi untuk mengganti video
+        function changeVideo() {
+            currentVideoIndex = (currentVideoIndex + 1) % klipVideos.length; // Menghitung indeks video selanjutnya
+            videoElement.src = klipVideos[currentVideoIndex]; // Mengganti sumber video
+            videoElement.load(); // Memuat video baru
+            videoElement.play(); // Memutar video baru
+        }
+
+        // Menambahkan event listener untuk mengganti video ketika video selesai
+        videoElement.addEventListener('ended', changeVideo);
+    </script>
+</body>
+</html>

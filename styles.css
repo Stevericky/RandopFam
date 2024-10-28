@@ -14,6 +14,12 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+.carousel-inner img {
+    width: 100%; /* Memastikan gambar mengambil lebar penuh dari kontainer */
+    height: 800px; /* Menetapkan tinggi yang sama untuk semua gambar */
+    object-fit: cover; /* Memastikan gambar terpotong sesuai proporsi */
+}
+
 
 #background-video {
     position: absolute;
