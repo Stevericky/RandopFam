@@ -45,7 +45,7 @@
                 <li class="nav-item"><a href="#tentang" class="nav-link">Tentang Mendiang</a></li>
                 <li class="nav-item"><a href="#galeri" class="nav-link">Galeri Foto</a></li>
                 <li class="nav-item"><a href="#video" class="nav-link">Video Kenangan</a></li>
-                <li class="nav-item"><a href="#klip" class="nav-link">Klip Video</a></li>
+                <li class="nav-item"><a href="#klip" class="nav-link">Klip Kocak</a></li>
                 <li class="nav-item"><a href="#pesan" class="nav-link">Pesan dan Kenangan</a></li>
             </ul>
         </div>
@@ -109,15 +109,29 @@
         </section>
 
         <section id="klip" class="content-section">
-            <h2>Klip Video</h2>
-            <video id="klip-video" autoplay muted controls class="w-100 rounded shadow">
+            <h2>Klip</h2>
+            <div class="btn-group mb-3" role="group" aria-label="Video Selection">
+                <button type="button" class="btn btn-primary" onclick="setVideo('klip1.mp4')">cuplikan 1</button>
+                <button type="button" class="btn btn-primary" onclick="setVideo('klip2.mp4')">cuplikan 2</button>
+                <button type="button" class="btn btn-primary" onclick="setVideo('Goyangan.mp4')">cuplikan 3</button>
+                <button type="button" class="btn btn-primary" onclick="setVideo('klip4.mp4')">cuplikan 4</button>
+            </div>
+            <video id="klip-video" controls class="w-100 rounded shadow">
                 <source src="klip1.mp4" type="video/mp4">
-                <source src="klip2.mp4" type="video/mp4">
-                <source src="Goyangan.mp4" type="video/mp4">
-                <source src="klip4.mp4" type="video/mp4">
                 Browser Anda tidak mendukung video.
             </video>
         </section>
+        
+        <script>
+            const videoElement = document.getElementById('klip-video');
+        
+            function setVideo(videoSrc) {
+                videoElement.src = videoSrc;
+                videoElement.load();
+                videoElement.play();
+            }
+        </script>
+        
 
         <section id="pesan" class="content-section">
             <h2>Pesan dan Kenangan</h2>
@@ -140,26 +154,5 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        const klipVideos = [
-            "klip1.mp4",
-            "klip2.mp4",
-            "Goyangan.mp4",
-            "klip4.mp4"
-        ];
-
-        let currentVideoIndex = 0;
-        const videoElement = document.getElementById('klip-video');
-
-        function changeVideo() {
-            currentVideoIndex = (currentVideoIndex + 1) % klipVideos.length;
-            videoElement.src = klipVideos[currentVideoIndex];
-            videoElement.load();
-            videoElement.play();
-        }
-
-        videoElement.addEventListener('ended', changeVideo);
-    </script>
 </body>
 </html>
