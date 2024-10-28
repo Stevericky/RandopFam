@@ -15,6 +15,9 @@
         html {
             scroll-behavior: smooth; 
         }
+        .video-selection {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -27,27 +30,33 @@
             <div class="container text-center">
                 <h1>Selamanya di Hati</h1>
                 <p>Mengenang Sie Hai</p>
-                <a href="#tentang" class="scroll-down">Lanjutkan Membaca</a>
+                <a href="#tentang" class="scroll-down btn btn-light">Lanjutkan Membaca</a>
             </div>
         </div>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="#tentang" class="nav-link">Tentang Mendiang</a></li>
-                <li class="nav-item"><a href="#galeri" class="nav-link">Galeri Foto</a></li>
-                <li class="nav-item"><a href="#video" class="nav-link">Video Kenangan</a></li>
-                <li class="nav-item"><a href="#klip" class="nav-link">Klip Video</a></li>
-                <li class="nav-item"><a href="#pesan" class="nav-link">Pesan dan Kenangan</a></li>
-            </ul>
+            <a class="navbar-brand" href="#">Selamanya di Hati</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="#tentang" class="nav-link">Tentang Mendiang</a></li>
+                    <li class="nav-item"><a href="#galeri" class="nav-link">Galeri Foto</a></li>
+                    <li class="nav-item"><a href="#video" class="nav-link">Video Kenangan</a></li>
+                    <li class="nav-item"><a href="#klip" class="nav-link">Klip Video</a></li>
+                    <li class="nav-item"><a href="#pesan" class="nav-link">Pesan dan Kenangan</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <main class="container mt-5">
         <section id="tentang" class="content-section">
             <h2>Tentang Mendiang</h2>
-            <p>Sesosok ayah yang baik hati dan menyanyangi anak-anaknya juga sangat pekerja keras.</p>
+            <p>Sesosok ayah yang baik hati dan menyayangi anak-anaknya, juga sangat pekerja keras.</p>
             <img src="Foto1.jpg" alt="[Sie Hai]" class="foto-mendiang img-fluid rounded shadow">
         </section>
 
@@ -95,7 +104,7 @@
 
         <section id="klip" class="content-section">
             <h2>Klip Video</h2>
-            <video id="klip-video" autoplay muted controls class="w-100 rounded shadow">
+            <video id="klip-video" controls class="w-100 rounded shadow">
                 <source src="klip1.mp4" type="video/mp4">
                 Browser Anda tidak mendukung video.
             </video>
@@ -131,8 +140,8 @@
             "klip4.mp4"
         ];
 
-        let currentVideoIndex = 0;
         const videoElement = document.getElementById('klip-video');
+        let currentVideoIndex = 0;
 
         function changeVideo() {
             currentVideoIndex = (currentVideoIndex + 1) % klipVideos.length;
@@ -142,6 +151,10 @@
         }
 
         videoElement.addEventListener('ended', changeVideo);
+        // Mulai dengan video pertama
+        videoElement.src = klipVideos[currentVideoIndex];
+        videoElement.load();
+        videoElement.play();
     </script>
 </body>
 </html>
