@@ -6,18 +6,23 @@
     <title>Selamanya di Hati - Mengenang [Nama Mendiang]</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+        html {
+            scroll-behavior: smooth; 
+        }
+    </style>
 </head>
 <body>
     <header class="parallax">
-        <!-- Video Background -->
         <video autoplay muted loop id="background-video">
             <source src="Goyangan.mp4" type="video/mp4">
             Browser Anda tidak mendukung video HTML5.
         </video>
-
-        <!-- Overlay untuk teks -->
         <div class="overlay">
             <div class="container text-center">
                 <h1>Selamanya di Hati</h1>
@@ -35,7 +40,6 @@
                 <li class="nav-item"><a href="#video" class="nav-link">Video Kenangan</a></li>
                 <li class="nav-item"><a href="#klip" class="nav-link">Klip Video</a></li>
                 <li class="nav-item"><a href="#pesan" class="nav-link">Pesan dan Kenangan</a></li>
-                <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
             </ul>
         </div>
     </nav>
@@ -43,7 +47,7 @@
     <main class="container mt-5">
         <section id="tentang" class="content-section">
             <h2>Tentang Mendiang</h2>
-            <p>Sesosok ayah yang baik hati dan menyanyangi anak anaknya juga sangat amat pekerja keras.</p>
+            <p>Sesosok ayah yang baik hati dan menyanyangi anak-anaknya juga sangat pekerja keras.</p>
             <img src="Foto1.jpg" alt="[Sie Hai]" class="foto-mendiang img-fluid rounded shadow">
         </section>
 
@@ -79,7 +83,7 @@
                     <span class="sr-only">Selanjutnya</span>
                 </a>
             </div>
-        </section>        
+        </section>
 
         <section id="video" class="content-section">
             <h2>Video Kenangan</h2>
@@ -100,16 +104,11 @@
         <section id="pesan" class="content-section">
             <h2>Pesan dan Kenangan</h2>
             <p>
-                Pesan:
-                
-                Kepada Ayah tercinta, terima kasih atas semua cinta dan dukungan yang telah Ayah berikan. Setiap momen yang kita habiskan bersama adalah kenangan berharga yang akan saya bawa selamanya. Walau kini saya harus melanjutkan hidup tanpa Ayah, pelajaran dan nilai-nilai yang Ayah tanamkan akan selalu menjadi panduan dalam langkahku.
-                
-                Kenangan:
-                
-                Perjalanan kita ke pantai, tawa dan kebahagiaan yang tak terlupakan.
-                Momen-momen sederhana saat kita duduk dan berbagi cerita di sore hari.
-                Nasihat Ayah yang selalu membimbingku dalam hidup.
-                Cinta Ayah yang tulus dan tanpa syarat, menjadi kekuatan terbesar dalam hidupku.</p>
+                Pesan: Kepada Ayah tercinta, terima kasih atas semua cinta dan dukungan yang telah Ayah berikan. Setiap momen yang kita habiskan bersama adalah kenangan berharga yang akan saya bawa selamanya. Walau kini saya harus melanjutkan hidup tanpa Ayah, pelajaran dan nilai-nilai yang Ayah tanamkan akan selalu menjadi panduan dalam langkahku.
+            </p>
+            <p>
+                Kenangan: Perjalanan kita ke pantai, tawa dan kebahagiaan yang tak terlupakan. Momen-momen sederhana saat kita duduk dan berbagi cerita di sore hari. Nasihat Ayah yang selalu membimbingku dalam hidup. Cinta Ayah yang tulus dan tanpa syarat, menjadi kekuatan terbesar dalam hidupku.
+            </p>
         </section>
     </main>
 
@@ -121,68 +120,27 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Slideshow script -->
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
-
-    <!-- Kirim pesan script -->
-    <script>
-        document.getElementById('pesanForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Mencegah form submit
-            alert('Pesan Anda telah dikirim.'); // Menampilkan pesan konfirmasi
-        });
-    </script>
-
-    <!-- Kode JavaScript untuk klip video -->
     <script>
         const klipVideos = [
             "klip1.mp4",
             "klip2.mp4",
-            "klip3.mp4" // Tambahkan lebih banyak klip sesuai kebutuhan
+            "Goyangan.mp4",
+            "klip4.mp4"
         ];
 
         let currentVideoIndex = 0;
         const videoElement = document.getElementById('klip-video');
 
-        // Fungsi untuk mengganti video
         function changeVideo() {
-            currentVideoIndex = (currentVideoIndex + 1) % klipVideos.length; // Menghitung indeks video selanjutnya
-            videoElement.src = klipVideos[currentVideoIndex]; // Mengganti sumber video
-            videoElement.load(); // Memuat video baru
-            videoElement.play(); // Memutar video baru
+            currentVideoIndex = (currentVideoIndex + 1) % klipVideos.length;
+            videoElement.src = klipVideos[currentVideoIndex];
+            videoElement.load();
+            videoElement.play();
         }
 
-        // Menambahkan event listener untuk mengganti video ketika video selesai
         videoElement.addEventListener('ended', changeVideo);
     </script>
 </body>
